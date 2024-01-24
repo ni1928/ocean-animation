@@ -1,8 +1,11 @@
 body {
     background-image: url(/images/sea-background-video-conferencing_23-2148629595.jpg);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100%;
+    width: 100vw;
     height: 100vh;
+    overflow: hidden;
+    margin: 0;
 }
 
 .container{
@@ -15,7 +18,8 @@ body {
 
 
 .blue-fish-container{
-    animation: moveRight 30s linear infinite; 
+    margin-top: 50px;
+    animation: swimBlueFish 30s linear infinite; 
 }
 
 .turtle-container{
@@ -23,8 +27,16 @@ body {
     flex-direction: column;
     align-items: center;
     margin-top: auto;
-    animation: moveLeft 30s linear infinite; 
+    animation: swimTurtle 30s linear infinite; 
     
+}
+
+.colorful-fish-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: swimColorfulFish 30s linear infinite; 
+   
 }
 
 .blue-fish{
@@ -37,24 +49,78 @@ body {
     width: 120px;
     height: 80px;
     margin: 0 30px 50px 0;
-  
+}
+
+.colorful-fish{
+    width: 100px;
+    height: 110px;
+    margin-bottom: 70px;
 
 }
 
-@keyframes moveRight {
-    0%{
-            transform: translateX(0);
+@keyframes swimBlueFish {
+    0% {
+        transform: translateX(0) translateY(0);
     }
-     
+
+    25% {
+        transform: translateX(10vw) translateY(10vh);
+    }
+
+    50% {
+        transform: translateX(30vw) translateY(20vh);
+    }
+
+    75% {
+        transform: translateX(50vw) translateY(-10vh);
+    }
+
     100% {
+        transform: translateX(100vw) translateY(0);
+    }
+    
+
+}
+
+
+
+
+@keyframes swimTurtle {
+    0%{
         transform: translateX(100vw);
     }
+    
+    
+    25% {
+        transform: translateX(-10vw) translateY(-10vh);
+    }
+
+    50% {
+        transform: translateX(-30vw) translateY(-10vh);
+    }
+    75% {
+        transform: translateX(-70vw) translateY(10vh);
+    }
+   100% {
+        transform: translateX(-100vw);
+    }
 
 }
 
-@keyframes moveLeft {
+@keyframes swimColorfulFish {
     0%{
-            transform: translateX(0);
+        transform: translateX(100vw);
+    }
+    25% {
+        transform: translateX(10vw) translateY(30vh);
+    }
+
+    50% {
+        transform: translateX(30vw) translateY(20vh);
+    }
+
+    75% {
+        transform: translateX(-50vw) translateY(10vh) ;
     }
 
    100% {
